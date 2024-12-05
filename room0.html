@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>hidden structure</title>
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <link rel="shortcut icon" type="image/png" href="IMG/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="yellow-outline">
+            <feFlood id="outline-color" flood-color="#ffff00AA" result="base"/>
+            <feMorphology result="bigger" in="SourceGraphic" operator="dilate" radius="1"/>
+            <feComposite result="drop" in="base" in2="mask" operator="in"/>
+            <feBlend in="SourceGraphic" in2="normal" mode="normal"/>
+        </filter>
+    </defs>
+</svg>
+
+
+<div id="wievport">
+  	<div id="game">  
+       <div id="player" class="person"></div>      
+  	</div>
+
+  </div>
+
+
+     
+ 
+   <div id="panel" class="world"></div>
+       <div id="navigator" class="world">
+           
+           
+           
+           <div id="iconPistol" onclick="selectPistolAttack()"></div>
+           <div id="iconShootgun" onclick="selectShootgunAttack()"></div>
+           <div id="iconPlasmagun" onclick="selectPlasmagunAttack()"></div>
+           <div id="iconFiregun" onclick="selectFiregunAttack()"></div>
+           <div id="iconWhiteCard"></div>
+           <div id="iconBlackCard"></div>
+    </div> 
+    <script type="text/javascript" src="JS/engine/map-driver.js"></script>
+    <script type="text/javascript" src="JS/game-units/fireball.js"></script>
+    <script type="text/javascript" src="JS/game-units/alien.js"></script>   
+    <script type="text/javascript" src="JS/game-units/player.js"></script>
+    <script type="text/javascript" src="JS/game-units/human.js"></script>
+    <script type="text/javascript" src="JS/engine/sensor-joy.js"></script>
+    <script type="text/javascript" src="JS/engine/logik.js"></script>
+    <script type="text/javascript" src="JS/engine/ambient-sound.js"></script>
+ 
+    <div id="message"></div>
+   
+  </body>
+</html>

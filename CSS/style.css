@@ -1,0 +1,2640 @@
+
+::selection {
+   background: transparent;
+}
+
+body {cursor: url(../CURSOR/cursor.cur), auto}
+
+
+body, html{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	text-align: center;
+	color: #71d742;
+/*	overflow: auto; */
+	overflow: hidden;
+	touch-action: none;
+	width: 100%;
+	height: 100%;
+	font-family: monospace;	
+}
+
+#wievport{
+	padding: 0;
+    margin: 0;
+    /*width: 320px;
+    height: 320px;*/
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+/*	overflow: visible;*/
+    display: inline-block;
+    position: absolute;
+    /*top: calc(100% / 2 - 160px);
+    left: calc(100% / 2 - 160px);*/
+    top: 0;
+    left: 0;
+    touch-action: manipulation;  
+}
+
+#wievportEndGame{
+	padding: 0;
+    margin: 0, auto;
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    touch-action: manipulation;  
+}
+
+
+#navigator{
+    width: 40%;
+	height: 67px;
+	position: fixed;
+	left:10%;
+	bottom: 10px;
+	padding-left: 130px;
+    padding-right: 30px;
+	margin: 0;
+	color: #71d742;
+	font-size: 15pt;
+	font-family: monospace;
+	display:inline-flex;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+
+
+#navigator::-webkit-scrollbar { 
+    height: 0px; 
+}
+
+#navigator::-webkit-scrollbar-track {
+}
+
+#navigator::-webkit-scrollbar-thumb {
+  background-color: black;    
+  border-radius: 20px;       
+  border: 3px solid #71d742;  
+}
+
+
+#panel{
+	width: 40%;
+	height: 63px;
+	position: fixed;
+	right: 10%;
+	bottom: 10px;
+	color: #71d742;
+	padding: 0;
+	margin: 0;
+	font-size: 15pt;
+	font-family: monospace;
+	z-index: 1000; 
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+
+}
+
+
+button{
+  width: 50px;
+  height: 50px;
+  /* border: 2px solid #71d742; */
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  font-size: 8pt;
+  font-family: monospace;
+  color: #71d742;
+  background-color: black;
+  box-sizing: border-box; 
+
+}
+
+button:hover{
+	background-color: #71d742;
+	color: black; 
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.joyButtonsStyle{
+	width: 40px;
+	height: 40px;
+}
+
+.joyButtonsStyleDummie{
+	width: 50px;
+	height: 50px;
+	opacity: 0;
+}
+
+h1{
+	font-family: monospace;
+	color: #71d742;
+	filter:drop-shadow(0px 0px 15px #71d742);
+	font-size: 30pt;
+	z-index: 1000;
+	
+}
+
+h2 {
+	font-family: monospace;
+}
+
+.blockMainMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	max-width: 100%;
+	color: #71d742;
+
+}
+
+.blockMainMenu-wrapper {
+	padding: 25px;
+}
+
+.lang-block {
+	display: none;
+	
+	
+	
+}
+
+.controls-block {
+	display: none;
+	
+	
+}
+
+.difficult-block {
+	display: none;
+	
+	
+}
+
+
+.about-block {
+	display: none;
+	
+	
+}
+
+.sound-icon{
+	padding-bottom: 50px;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.visible-in-loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow-y: auto;
+    height: 100%;
+}
+
+.gameVersion {
+	position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #71d742;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+  display: block;
+}
+
+.box div {
+  display: inline-block;
+  width: 25%;
+  height: 25%;
+}
+
+.blink{
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+
+#game{
+	width: 1500px;
+	height: 1500px;
+	margin: 0; 
+	padding: 0; 
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	background-image: url(../IMG/floor.jpg);
+}
+
+#player{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/player_r.png);
+	display: flex;
+	z-index: 999; 	
+/*	outline: solid rgba(0, 0, 0, 1) 2000px;*/
+	outline: solid rgba(0, 0, 0, 0.95) 2000px;
+	outline-offset: 150px;
+	opacity: 1;
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: center;
+	pointer-events: none;
+
+}
+
+
+
+.playerBackRight{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	top: -150px;
+	left: -150px;
+	pointer-events: none;
+	opacity: 0.95;
+	filter: none;
+
+	
+}
+
+
+.playerBackLeft{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	top: -150px;
+	left: -150px;
+	pointer-events: none;
+	transform: scale(-1, 1);
+	transition: transform 0.5s easy-in-out;
+}
+
+.playerBackUp{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	top: -150px;
+	left: -150px;
+	pointer-events: none;
+	transition: transform 0.5s easy-in-out;
+}
+
+
+.playerBackDown{
+	width: 350px;
+	height: 350px;
+	position: absolute;
+	top: -150px;
+	left: -150px;
+	pointer-events: none;
+	transform: scale(1, -1);
+	transition: transform 0.5s easy-in-out;
+}
+
+
+.human{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+	background-image: url(../IMG/human.png);
+    transition: all 0.5s ease; 
+    z-index: 800;
+    cursor: url(../CURSOR/hand.cur), auto;
+    background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: center;
+}
+
+.robert{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+	background-image: url(../IMG/robert.png);
+    transition: all 0.5s ease; 
+    z-index: 800;
+    cursor: url(../CURSOR/hand.cur), auto;
+    background-size: 80%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: center;
+}
+
+
+
+.human div {
+	display: none;
+}
+
+.human:hover div {
+	display: block;
+}
+
+
+.bot-life-line {
+	display: none;
+}
+
+.monsteralien{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+
+}
+
+.monsteralien:hover{
+	filter: url(#yellow-outline);
+
+}
+
+.monsteralien:hover .bot-life-line{
+	display: block;
+}
+
+.monsterhairbug{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+
+}
+
+.monsterhairbug:hover{
+	filter: url(#yellow-outline);
+
+}
+
+.monsterhairbug:hover .bot-life-line{
+	display: block;
+}
+
+.monsterblob{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+
+}
+
+.monsterblob:hover{
+	filter: url(#yellow-outline);
+}
+
+.monsterblob:hover .bot-life-line{
+	display: block;
+}
+
+.monstersnake{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+
+}
+
+.monstersnake:hover{
+	filter: url(#yellow-outline);
+}
+
+.monstersnake:hover .bot-life-line{
+	display: block;
+}
+
+.monsterthongle{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+
+}
+
+.monsterthongle:hover{
+	filter: url(#yellow-outline);
+}
+
+.monsterthongle:hover .bot-life-line{
+	display: block;
+}
+
+
+.boss{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	text-align: left;
+    transition: all 0.5s ease; 
+    z-index: 800;
+    overflow: visible;
+
+}
+
+.boss:hover{
+	filter: url(#yellow-outline);
+
+}
+
+.boss-image{
+	width: 100px;
+	height: 100px;
+	background-image: url(../IMG/boss.gif);
+	position: absolute;
+	left: -25px;
+	bottom: -25px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+
+.boss-attack{
+	width: 100px;
+	height: 100px;
+	background-image: url(../IMG/boss-attack.gif);
+	position: absolute;
+	left: -25px;
+	bottom: -25px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+
+.portal{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/portal.gif);
+	background-size: cover;
+	display: inline-block;
+    z-index: 900;
+}
+
+#editor{
+	width: 50px;
+	/*height: 600px;*/
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	padding: 0;
+	margin: 0;
+	border: solid 1px #71d742;
+	
+}
+
+#editor>*:hover{
+	filter: url(#yellow-outline);
+}
+
+.fd1{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage1.jpg);
+    z-index: 1;
+}
+
+.fd2{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage2.jpg);
+    z-index: 1;
+}
+.fd3{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage3.jpg);
+    z-index: 1;
+}
+.fd4{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage4.jpg);
+    z-index: 1;
+}
+.fd5{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage5.jpg);
+    z-index: 1;
+}
+
+.fg{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-green.png);
+    z-index: 1;
+}
+
+.fserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-server.jpg);
+    z-index: 1;
+}
+
+.cserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete-penal.png);
+    z-index: 1;
+}
+
+.wserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went-penal.jpg);
+    z-index: 1;
+}
+
+.fwent{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went.jpg);
+    z-index: 1;
+}
+
+.fwentbr{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went-broken.jpg);
+    z-index: 1;
+}
+
+.wallserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall-server.jpg);
+    z-index: 1;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.wallserv-open{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall-server-open-doors.png);
+    z-index: 1;
+}
+
+.brickserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/brick-penal.png);
+    z-index: 1;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.brickserv-open{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/brick-penal-open-doors.png);
+    z-index: 1;
+}
+
+.w{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/redwall.jpg);
+	z-index: 750;
+	position: relative;
+}
+
+.walrm{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wall-alarm.gif);
+	z-index: 750;
+	position: relative;
+}
+
+.lw{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/linewall.jpg);
+	z-index: 750;
+	position: relative;
+}
+
+.as{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfalt.png);
+	z-index: 1;
+}
+
+
+.ash{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfalthorizontalline.png);
+	z-index: 1;
+}
+
+.asv{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfaltverticalline.png);
+	z-index: 1;
+}
+
+
+.o{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcefloor.jpg);
+}
+
+.black{
+	width: 50px;
+	height: 50px;
+	background-image: url(../IMG/oficcefloor.jpg);
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	z-index: 10;
+}
+
+.wc{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcewallcooler.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.ll{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/lightwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.ww{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/wentwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.nw{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/numbwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.wp{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcewallplant.png);
+	position: relative;
+	z-index: 701;
+}
+
+.ws{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcedoorclosed.jpg);
+	background-repeat: no-repeat;
+	background-position-x: left;
+	z-index: 998;
+	position: relative;
+	cursor: url(../CURSOR/opendoor.cur), auto;
+	transition: all 0.5s;
+}
+
+/*.ws:hover{
+	filter: url(#yellow-outline);
+
+}*/
+
+.locked_door_white{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedoorclosedwhite.jpg);
+	z-index: 760;
+	cursor: url(../CURSOR/opendoor.cur), auto;
+	background-repeat: no-repeat;
+	transition: all 0.5s;
+	background-position-x: "left;";
+}
+
+#locked_door_white:hover{
+	filter: url(#yellow-outline);
+}
+
+.locked_door_black{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedoorclosedblack.jpg);	
+	z-index: 760;
+	cursor: url(../CURSOR/opendoor.cur), auto;
+	background-repeat: no-repeat;
+	transition: all 0.5s;
+	background-position-x: "left;";
+}
+
+#locked_door_black:hover{
+	filter: url(#yellow-outline);
+}
+
+.exit_door{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/exitdoor.jpg);
+	z-index: 760;
+}
+
+#exit_door:hover{
+	filter: url(#yellow-outline);
+}
+
+.ud{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedooropen.png);
+	z-index: 1;
+	color: #28e26d;
+	position: relative;
+	cursor: url(../CURSOR/closedoor.cur), auto
+/*	pointer-events: none;*/
+}
+
+
+
+.ud_rd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/oficcedooropen.png);
+	z-index: 755;
+}
+
+.key_card_white{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/key_card_1.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    filter:drop-shadow(0px 0px 5px blue);
+    text-align: center;
+    color: yellow;
+    z-index: 760;
+}
+
+
+
+.key_card_black{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	animation-name: blinker;
+	animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	background-image: url(../IMG/key_card_2.png);
+	filter:drop-shadow(0px 0px 15px blue);
+    text-align: center;
+    color: yellow;
+	display: inline-block;
+	z-index: 760;
+}
+
+.medicKit{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/medic_kit.png);
+	z-index: 760;
+}
+
+.medicKitThing{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/medic_kit.png);
+	z-index: 760;
+}
+
+.healthIcon{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/medic_kit.png);
+	z-index: 760;
+}
+
+
+.pistol{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/pistol.png);
+	 animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 760;
+	cursor: url(../CURSOR/hand.cur), auto;
+	filter: sepia(100%);
+}
+
+.shootGun{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/shootgun.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 760;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+
+.pistolCells{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/cells.png);
+	z-index: 760;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.pistolCellsThing{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/cells.png);
+	z-index: 760;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.shootgunCells{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/scells.png);
+	z-index: 760;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.shootgunCellsThing{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/scells.png);
+	z-index: 760;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.plasmagunCellsThing{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/plasmaguncells.png);
+	z-index: 760;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+
+.ow{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/flor_wood.jpg);
+    z-index: 1;
+}
+
+.oa{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete.png);
+    z-index: 1;
+}
+
+.oash{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete-shadow.png);
+    z-index: 1;
+}
+
+.w021{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall021.jpg);
+    z-index: 1;
+}
+
+.wandb{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallAndBox.jpg);
+    z-index: 1;
+}
+
+.wandb2{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallAndBox2.jpg);
+    z-index: 1;
+}
+
+.wdz{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallDangerZone.jpg);
+    z-index: 1;
+}
+
+.wh23{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallHarp23.jpg);
+    z-index: 1;
+}
+
+.op{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/oficcefloortable.jpg);
+    z-index: 1;
+}
+
+.we{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+    background-color: black;
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+}
+
+
+#message{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left:0px;
+	top: 0px;
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	text-align: center;
+	font-family: monospace;
+	color: #71d742;
+	font-size: 20pt;
+	z-index: 90000;
+}
+
+.dead-player{
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+}
+
+
+
+#menuArea{
+	min-width: 500px;
+	margin-top: 10px;	
+}
+
+ 
+
+
+span{
+font-family: monospace; 
+font-size: 5pt;
+display: none;
+}
+
+
+
+a{
+	color: #71d742;
+	text-decoration: none;
+	font-family: monospace;
+	font-size: 1.2em;
+	transition: all 0.5s;
+	cursor: url(../CURSOR/cursor.cur), auto;
+}
+
+a:hover{
+	color: #71d742;
+	
+}
+
+.splash{
+	display: inline-block;
+	margin-top: 10%;
+	
+
+}
+
+
+.ground{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/ground.jpg);
+	z-index: 1;
+	color: #71d742;
+}
+
+.groundLong{
+	width: 1500px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcewallplant.png);
+	z-index: 900;
+	color: #71d742;
+}
+
+.grass{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.png);
+	z-index: 1;
+	color: #71d742;
+}
+
+.gr{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.jpg);
+	z-index: 1;
+	color: #71d742;
+}
+
+.grassLong{
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.png);
+	z-index: 0;
+	color: #71d742;
+}
+
+
+
+.tree{
+	width: 200px;
+	height: 200px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/tree.png);
+	z-index: 800;
+	color: #71d742;
+	pointer-events: none;
+
+}
+
+
+.vw{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/water.gif);
+	z-index: 1;
+}
+
+.vp{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/whitepaint.gif);
+	z-index: 1;
+}
+
+.se{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/se.png);
+	z-index: 1;
+
+}
+
+
+.b{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bush.png);
+	z-index: 900;
+    position: relative;
+    pointer-events: none;
+}
+
+.bg{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bushgrass.png);
+	z-index: 1;
+}
+
+#coverPlate{
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/oficcewall.jpg);
+	z-index: 1000;
+}
+
+#go{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: #71d742;
+	border:1px solid grey;
+	color: black;
+	font-family: monospace;
+	font-size: 15pt;
+}
+
+#go:hover{
+	background-color: #71d742;
+
+}
+
+#iconGrenade{
+	min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/irsensor.png);
+	z-index: 999;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+#iconPistol{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/pistol.png);
+	display: none;
+	z-index: 999;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+#iconPistol:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#iconShootgun{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/shootgun.png);
+	display: none;
+	z-index: 999;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+#iconShootgun:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#iconPlasmagun{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/plasmagun.png);
+	display: none;
+	z-index: 999;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+#iconPlasmagun:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#iconFiregun{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/firegun.png);
+	display: none;
+	z-index: 999;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+#iconFiregun:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#iconWhiteCard{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/key_card_1.png);
+	display: none;
+	z-index: 999;
+
+}
+
+#iconBlackCard{
+    min-width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/key_card_2.png);
+	display: none;
+	z-index: 999;
+}
+
+
+#board{
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.deadMonster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/deadmonster.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.burnMonster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/burnmonster.gif);
+    transition: all 0.2s ease; 
+    z-index: 601;
+}
+
+.bloodDot0{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot0.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.bloodDot1{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot1.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.bloodDot2{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot2.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.bloodDot3{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot3.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.bloodDot4{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot4.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.bloodDot5{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bloodDot5.png);
+    transition: all 0.2s ease; 
+    z-index: 600;
+}
+
+.irSensor{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/irsensor.gif);
+    transition: all 0.2s ease; 
+    z-index: 700;
+}
+
+.explode{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/explode.png);
+    transition: all 0.2s ease; 
+    z-index: 0;
+    opacity: 0.5;
+}
+
+
+.tab{
+	width: 100%;
+	max-height: 300px;
+	bottom: 0;
+	position: fixed;
+	padding: 15px;
+	margin: 0;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	color: #9b9898;
+	text-align: left;
+    transition: all 0.5s ease; 
+    background-color: black;
+    border: 2px solid #545454;
+    box-shadow: 0px 0px 50px 50px rgb(0 0 0);
+    box-sizing: border-box;
+    z-index: 15000;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)) , url(../IMG/space-wall.jpg);
+}
+
+
+.tab::-webkit-scrollbar { 
+    width: 8px; 
+}
+
+.tab::-webkit-scrollbar-track {
+/*  background: #71d742;        */
+}
+
+.tab::-webkit-scrollbar-thumb {
+  background-color: black;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #71d742;  /* creates padding around scroll thumb */
+}
+
+.tab img {
+	width: 100%;
+}
+
+
+.radioTab{
+	width: 100%;
+	max-height: 300px;
+	bottom: 0;
+	position: fixed;
+	padding: 15px 15px 15px 100px;
+	margin: 0;
+	font-size: 1.5em;
+	letter-spacing: 1px;
+	color: #9b9898;
+	text-align: left;
+    transition: all 0.5s ease; 
+    background-color: black;
+    border: 2px solid #545454;
+    box-shadow: 0px 0px 50px 50px rgb(0 0 0);
+    box-sizing: border-box;
+    z-index: 15000;
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)) , url(../IMG/space-wall.jpg);
+}
+
+.radioTab::-webkit-scrollbar { 
+    width: 8px; 
+}
+
+.radioTab::-webkit-scrollbar-track {
+/*  background: #71d742;        */
+}
+
+.radioTab::-webkit-scrollbar-thumb {
+  background-color: black;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #71d742;  /* creates padding around scroll thumb */
+}
+
+.radioTab img {
+	width: 100%;
+}
+
+
+
+.plasmaGun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/plasmagun.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.plasmagunCells{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/plasmaguncells.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.fireGun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/firegun.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.firegunCells{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/fireguncells.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+
+
+#flatBlackPlane{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-color: black;
+	text-align: center;
+	display: inline-block;
+	
+}
+
+#enot{
+	width: 50%;
+	margin-top: 20%;
+	opacity: 100%;
+	transition: opacity 1s;
+	color: #71d742;
+	font-size: 72px;
+	font-weight: 600;
+}
+
+#startPhrase{
+	transition: opacity 1s;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+.toilet{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/toilet.png);
+	z-index: 800;
+	position: absolute;
+	color: #71d742;
+}
+
+.toilet:hover {
+	filter: url(#yellow-outline);
+}
+
+.sink{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/sink.png);
+	z-index: 800;
+	position: absolute;
+	color: #71d742;
+}
+
+#joystik{
+	width:130px;
+	height: 130px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	z-index: 1000;
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	color: #71d742;
+	user-select: none;
+	border-radius: 25px;
+}
+
+#joyButtons{
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 10000;
+    position: fixed;
+    right: 50px;
+    bottom: 10px;
+    color: #71d742;
+    user-select: none;
+}
+
+.wallwent{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wallwent.jpg);
+	z-index: 1;
+}
+
+.walllight{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/walllight.jpg);
+	z-index: 1;
+}
+
+.star{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsr.jpg);
+	z-index: 1;
+}
+
+.stal{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsl.jpg);
+	z-index: 1;
+}
+
+.stard{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsr-down.jpg);
+	z-index: 1;
+}
+
+.stald{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsl-down.jpg);
+	z-index: 1;
+}
+
+.flu{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/floorinsulatorrooms.jpg);
+	z-index: 1;
+}
+
+.flf{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/floor.jpg);
+	z-index: 1;
+}
+
+.dmd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/deadmonster.png);
+	z-index: 1;
+}
+
+.bth{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/batchu.png);
+	z-index: 1;
+}
+
+.tol{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/toilet.png);
+	z-index: 1;
+}
+
+.snk{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/sink.png);
+	z-index: 1;
+}
+
+.bed{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bed.png);
+	z-index: 1;
+}
+
+.rdo{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/rdo.gif);
+	z-index: 1;
+}
+
+.rdc{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/rdc.png);
+	z-index: 1;
+}
+
+.wrd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wrd.png);
+	z-index: 1;
+}
+
+.animateLinks{
+	color: #71d742;
+	cursor: unset;
+	padding: 10px;
+	border-radius: 50px;
+	box-sizing: border-box;
+}
+
+.animateLinks span {
+	display: none;
+}
+
+.animateLinks:hover{
+	color: black;
+    background-color: #71d742;
+	
+}
+
+.animateLinks span:hover {
+	display: block;
+}
+
+
+.viewStoryButton{
+	color: #71d742;
+	cursor: unset;
+	padding: 10px;
+	border-radius: 50px;
+	box-sizing: border-box;
+	text-align: center;
+    line-height: 11pt;
+	transition: all 0.5s;
+	
+}
+
+.viewStoryButton:hover{
+	color: black;
+    background-color: #71d742;
+	
+}
+
+#animLogo {
+	position: relative;
+	transition: all 1s ease-in-out;
+	animation: 4s linear 0s infinite alternate moveUpDown;
+}
+
+
+.soul-thing {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+    transition: all 0.2s ease; 
+    z-index: 800;
+}
+
+.patron {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: #71d742;
+	text-align: left;
+	background-image: url(../IMG/bullet.png);
+    transition: all 0.1s linear; 
+    z-index: 800;
+}
+
+.settings {
+	width: 80%;
+	max-width: 800px;
+	border: 1px solid #383838;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	margin-right: auto;
+	margin-left: auto;
+	color: #71d742;
+}
+
+.settings-row {
+	border-top: 1px solid #383838;
+	border-bottom: 1px solid #383838;
+	min-height: 50px;
+	background-color: #1b1b1b;
+	align-items: center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 0 40px;
+}
+
+.settings-row:hover{
+	background-color: #4e4e4e;
+}
+
+.dev-title {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #71d742;
+	font-size: 25px;
+}
+
+.dev-input {
+	margin-right: 20px;
+	max-width: 100px;
+	border: 1px solid #383838;
+	height: 30px;
+	background-color: black;
+	color: #71d742;
+}
+
+.dev-input:focus {
+	outline: none;
+}
+
+.armor {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  font-size: 0.6em;
+  color: #71d742;
+  text-align: left;
+  background-image: url(../IMG/armor.png);
+    transition: all 0.1s linear; 
+    z-index: 800;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.asideMenu {
+	background-color: black;
+	border-left: 4px solid #71d742;
+    border-right: 4px solid #71d742;
+    border-radius: 25px;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	z-index: 20000;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+	background-size: contain;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)) , url(../IMG/space-wall.jpg);
+}
+
+.statusMenu {
+	box-sizing: border-box;
+	padding-top: 65px;
+	background-color: black;
+	border-left: 4px solid #71d742;
+    border-right: 4px solid #71d742;
+    border-radius: 25px;
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	z-index: 21000;
+	box-sizing: border-box;
+	transition: all 0.3s ease-in-out;
+	background-size: contain;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 1)) , url(../IMG/space-wall.jpg);
+	overflow-y: scroll;
+}
+
+.statusMenu::-webkit-scrollbar { 
+    width: 12px; 
+}
+
+.statusMenu::-webkit-scrollbar-track {
+/*  background: #71d742;        /* color of the tracking area */*/
+}
+
+.statusMenu::-webkit-scrollbar-thumb {
+  background-color: black;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid #71d742;  /* creates padding around scroll thumb */
+}
+
+.card-status{
+	display: flex;
+	align-items: flex-start;
+	align-self: baseline;
+	flex-direction: column;
+	max-width: 300px;
+	font-size: 12pt;
+	box-sizing: border-box;
+    padding: 5px;
+}
+
+.card-status img{
+	margin-bottom: 20px;
+}
+
+#menuToggler {
+	width: 50px;
+	height: 50px;
+	border: 2px solid #71d742;
+    border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease; 
+	font-size: 8pt;
+	font-family: monospace;
+	color: #71d742;
+	background-color: black;
+/*	position: absolute;*/
+	position: fixed;
+	top: 10px;
+	left: calc(50% - 25px);
+	z-index: 20000;
+	box-sizing: border-box;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.menuToggler:hover{
+	border-top: 5px ridge #71d742;
+	border-bottom:5px ridge #71d742;
+	color: #71d742;
+	cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.menuItemIndicator {
+	width: 100px;
+	text-align: center;
+	color: #71d742;
+}
+
+.menuItemWrapper {
+	display: flex;
+	align-items: center;
+	padding-bottom: 15px;
+	border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    border-radius: 10px;
+    background-color: #000000;
+    margin: 5px;
+    padding: 5px;
+}
+
+.menuItemWrapper a:hover{
+	color: white;
+}
+
+.taskItem {
+	color: #71d742;
+	margin-bottom: 50px;
+	text-align: left;
+}
+
+
+
+.bagPackMenu{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    height: 70%;
+    box-sizing: border-box;
+    padding-top: 10px;
+    font-size: 12pt;
+    justify-content: space-between;
+}
+
+.bagPackMenu div{
+	box-sizing: border-box;
+    width: 85%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+
+.flashLightIcon{
+	width: 50px;
+	min-height: 50px;
+	background-image: url(../IMG/flashLightIcon.png);
+	border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+    padding: 5px;
+}
+
+
+#or{
+	display: inline;
+    font-size: 12pt;
+}
+
+.trap1 {
+ 	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	z-index: 1;
+  	background-image: url(../IMG/trap1.gif);
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.lift{
+	width: 150px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/lift.png);
+	z-index: 760;
+    cursor: url(../CURSOR/hand.cur), auto;
+    transition: all 15s;
+}
+
+
+.controlSwitch{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/controlSwitch.gif);
+	z-index: 760;
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.trigger{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/trigger.gif);
+	z-index: 800;
+	color: #71d742;
+	position: absolute;
+	pointer-events: none;
+}
+
+.rotor{
+	width: 50px;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/rotorStop.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	z-index: 800;
+	color: #71d742;
+	position: absolute;
+	pointer-events: none;
+}
+
+.blood-t{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table.png);
+	z-index: 1;
+}
+
+.blood-t-m{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man.png);
+	z-index: 1;
+}
+
+.blood-t-mh{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-half.png);
+	z-index: 1;
+}
+
+.blood-t-mm{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-monster.png);
+	z-index: 1;
+}
+
+.blood-t-ms{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-skillet.png);
+	z-index: 1;
+}
+
+.blood-t-msh{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-monster-head.png);
+	z-index: 1;
+}
+
+.blood-t-w{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-woman.png);
+	z-index: 1;
+}
+
+.capsule-o{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/capsule-wall.gif);
+	z-index: 1;
+}
+
+.capsule-t{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/capsule2-wall.gif);
+	z-index: 1;
+}
+
+.radio-image{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	width: 50px;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/radio.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	pointer-events: none;
+}
+
+.secretwall{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/secretdoor.png);
+	position: absolute;
+	z-index: 701;
+}
+
+.fireball{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/fireball.png);
+	z-index: 800;
+	color: #e8012c;
+	position: absolute;
+	pointer-events: none;
+	transition: all 0.2s ease-out;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+@keyframes moveUpDown { from { top: 0; } to { top: 15px; }  }
+
+
+@keyframes blinker {
+  from { opacity:  1; }
+   50% { opacity:  0.0; }
+    to { opacity:  1; }
+}
+
+
+
+@keyframes animatedBackground {
+    0% {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -100% 0px
+    }
+    }
+
+
+
+@media(max-width: 768px) {
+	.tab{
+	font-size: 1.5em;
+	}
+
+	#navigator {
+		overflow-x: scroll;
+		overflow-y: hidden;
+		top: 10px;
+		left: 5%;
+		padding-left: 0;
+	}
+
+	#panel {
+		top: 10px;
+		right: 5%;
+	}
+}
+
+@media(max-width: 470px) {
+	.settings-row{
+		flex-direction: column;
+	}
+
+	.settings-row button {
+		margin: 10px; 
+	}
+
+}

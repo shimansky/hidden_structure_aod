@@ -1,0 +1,314 @@
+
+::selection {
+   background: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background: black; 
+  width: 0px;  
+}
+
+body {cursor: url(../CURSOR/cursor.cur), auto}
+
+
+body, html{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	text-align: center;
+	color: #71d742;
+	overflow: auto; 
+	touch-action: none;
+	width: 100%;
+	height: 100%;
+	font-family: monospace;	
+	line-height: 10px;
+	overflow: hidden;
+}
+
+button{
+	width: 50px;
+  height: 50px;
+  /* border: 2px solid #71d742; */
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  font-size: 8pt;
+  font-family: monospace;
+  color: #71d742;
+  background-color: black;
+  box-sizing: border-box; 
+
+}
+
+p {
+/*	padding-bottom: 20px;*/
+	margin: 0;
+	width: 100%;
+  text-align: left;
+}
+
+button:hover{
+	background-color: #71d742;
+	color: black; 
+	cursor: url(../CURSOR/black.cur), auto;
+}
+
+h1{
+	font-family: monospace;
+	color: white;
+	filter:drop-shadow(0px 0px 15px white);
+	font-size: 30pt;
+	z-index: 1000;
+	
+}
+
+h2 {
+	font-family: monospace;
+}
+
+#board{
+
+}
+
+#topCorner{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+	transform: rotate(135deg);
+  top: -51px;
+  left: -51px;
+	background-color: black;
+	z-index: 2;
+}
+
+#bottomCorner{
+	height: 100px;
+	width: 100px;
+	position: absolute;
+  transform: rotate(135deg);
+  bottom: -51px;
+  right: -51px;
+	background-color: black;
+	z-index: 2;
+}
+
+.blockMainMenu {
+  width: 90%;
+  height: 90%;
+  box-sizing: border-box;
+  margin: 15px auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+	display: none;
+	background-size: contain;
+	background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 1)) , url(../IMG/space-wall.jpg);
+}
+
+.blockMainMenu-wrapper {
+	padding: 25px;
+}
+
+.lang-block {
+	
+}
+
+.controls-block {
+	
+}
+
+.difficult-block {
+	
+}
+
+.difficult-block-survive {
+	
+}
+
+.about-block {
+
+}
+
+.sound-icon{
+	color: #817f7f;
+	font-size: 1.2em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	text-align: center;
+	padding-left: 15px;
+	width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 5%;
+	transition: all 0.5s;
+	background-image: url(../IMG/menu-back-item.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transform: scale3d(1.0, 1.0, 1.0);
+}
+
+.sound-icon:hover{
+	color: #71d742;
+	transform: scale3d(1.1, 1.1, 1.0);
+}
+
+.visible-in-loader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.gameVersion {
+	position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+  display: block;
+}
+
+.box div {
+  display: inline-block;
+  width: 25%;
+  height: 25%;
+}
+
+.blink{
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+span{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+a{
+	color: #817f7f;
+	text-decoration: none;
+	font-family: monospace;
+	font-size: 1.2em;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	margin-bottom: 3%;
+  width: 100%;
+  text-align: center;
+	box-sizing: border-box;
+	transition: all 0.5s;
+	background-image: url(../IMG/menu-back-item.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	transform: scale3d(1.0, 1.0, 1.0);
+	cursor: url(../CURSOR/cursor.cur), auto;
+	
+}
+
+a:hover{
+	color: #71d742;
+	transform: scale3d(1.1, 1.1, 1.0);
+	background-image: url(../IMG/menu-back-item-selected.png);
+}
+
+.animateLinks{
+	cursor: unset;
+	display: inline-block;
+	width: 100%;
+	padding-left: 15px;
+	color: #817f7f;
+	position: relative;
+}
+
+
+.animateLinks span {
+	display: none;
+	font-size: 0.7em;
+	position: absolute;
+	width: 267px;
+	bottom: -10px;
+	left: calc(100% / 2 - 149px);
+}
+
+
+
+.animateLinks:hover span{
+	display: inline;
+	background-color: black;
+}
+
+.splash{
+	display: inline-block;
+	margin-top: 10%;
+	transition: all 2s;
+
+}
+
+
+#flatBlackPlane{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-color: black;
+	text-align: center;
+	display: inline-block;
+	
+}
+
+#enot{
+	width: 50%;
+	max-width: 300px;
+	opacity: 100%;
+	transition: opacity 1s;
+	color: white;
+	font-size: 72px;
+	font-weight: 600;
+}
+
+.companyName {
+	font-size: 25px;
+}
+
+#startPhrase{
+	position: absolute;
+	bottom: 50px;
+	left: calc(100%/2 - 50px);
+	transition: opacity 1s;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+#aboutBlockText{
+	font-size: 12pt;
+  line-height: 21pt;
+  max-width: 500px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@keyframes blinker {
+  from { opacity:  1; }
+   50% { opacity:  0.0; }
+    to { opacity:  1; }
+}
+

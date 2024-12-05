@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>hidden structure</title>
+        <link rel="stylesheet" type="text/css" href="CSS/menuStyle.css">
+        <link rel="shortcut icon" type="image/png" href="IMG/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="em-ribbon" style="position: absolute; left:0; top:0; width: 90px; height: 90px; background: url('http://stfalcon.github.io/stopwar/img/stop-war-in-ukraine.png'); z-index: 2013; border: 0;" title="Do something to stop this war! Russians are killing our children and civilians!" target="_blank"></a>
+
+
+
+        <div class="blockMainMenu lang-block visible-in-loader">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+            <div class="splash"><img src="IMG/lisa-2d.png" width="300px"></div>
+            
+            <br>
+            <br>
+            <br>
+            <span id="selectLang">Кінець гри...<br>the END of GAME...</span>
+            
+            <div class="blockMainMenu-wrapper">
+                <a href="index.html"><button>ok</button></a>
+                
+            </div>
+        </div>
+
+		<script type="text/javascript">
+			let splash = document.getElementsByClassName('splash')[0];
+			function setBlinkFlame(element){
+				setInterval(()=>{element.style.filter = 'saturate(1)'}, 1000);
+				setInterval(()=>{element.style.filter = 'saturate(2.5)'}, 4000);
+			}
+			setBlinkFlame(splash);
+		</script>
+    </body>
+
+</html>

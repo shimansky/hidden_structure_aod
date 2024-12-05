@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>hidden structure</title>
+        <link rel="stylesheet" type="text/css" href="CSS/menuStyle.css">
+        <link rel="shortcut icon" type="image/png" href="IMG/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+<a href="https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi" class="em-ribbon" style="position: absolute; left:0; top:0; width: 90px; height: 90px; background: url('http://stfalcon.github.io/stopwar/img/stop-war-in-ukraine.png'); z-index: 2013; border: 0;" title="Do something to stop this war! Russians are killing our children and civilians!" target="_blank"></a>
+
+        <div id="board" class="blockMainMenu">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+            <br>
+            <br>
+            <br>
+             <a href="#" id="storyMode" class="animateLinks" onclick="timedClick(this),showHideDifficultBlock(),hideBoardBlock()" onmouseover="menuItemPlay()">play ></a>
+
+            <a href="#" id="settings" class="animateLinks" onclick="timedClick(this),showHideSettingsBlock(),hideBoardBlock(),setDefaultFlashlightControls(),setDefaultToggleMenuMusic()" onmouseover="menuItemPlay()">settings</a>
+
+            <a href="#" id="control" class="animateLinks" onclick="timedClick(this),showHideControlsBlock(),hideBoardBlock()" onmouseover="menuItemPlay()">controls</a>
+
+            <a href="#" id="about" class="animateLinks" onclick="timedClick(this),showHideAboutBlock(),hideBoardBlock()" onmouseover="menuItemPlay()">reset progress</a>
+
+
+            <a href="#" id="boardBlockBack" class="animateLinks" onclick="timedClick(this),showHideLangBlock(),hideBoardBlock()" onmouseover="menuItemPlay()">&#9668; back</a>
+
+       </div>
+       <div id="flatBlackPlane" onclick="startNewGame()">
+         <img id ="enot" src="IMG/enotLogo.svg"><br>
+        <span class="companyName">ENOT web studio</span>
+         <div id="startPhrase">click to start</div>
+       </div>
+
+        <div class="blockMainMenu lang-block visible-in-loader">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+            <div class="splash"><img src="IMG/lisa-2d.png" width="300px"></div>
+            
+            <br>
+            <br>
+            <br>
+            <span id="selectLang">select language:</span>
+            
+            <div class="blockMainMenu-wrapper">
+                <button onclick="timedClick(this),showHideLangBlock(), showBoardBlock(),translateToEng()" onmouseover="menuItemPlay()">eng</button>
+                <button onclick="timedClick(this),showHideLangBlock(), showBoardBlock(),translateToUa()" onmouseover="menuItemPlay()">ua</button>
+            </div>
+        </div>
+
+        <div class="blockMainMenu controls-block">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+            <br>
+            <br>
+            <br>
+            <span id="screenTitle">screen zooming:</span>
+            <br>
+            <span id="zoom">ctrl + scroll - zoom+ / zoom-</span><br>
+            <span id="fullscreen">ENTER - turn on/off fullscreen</span><br>
+            <br>
+            <br>
+            <br>
+            <span id="controls">controls:</span> 
+            <br>
+            <span id="up">W / swipe up - forward</span><br>
+            <span id="left">A / swipe left - left</span><br>
+            <span id="down">S / swipe down - down</span><br>
+            <span id="right">D / swipe right - right</span><br>
+            <span id="grenade">E - set sensor grenade</span><br>
+            <span id="light">F - turn on/off lighter</span><br>
+            <span id="info">i - info</span><br>
+            <span id="run">SHIFT - run</span><br>
+            <span id="attack">click / touch - attack</span><br>
+
+            <br>
+            <br>
+            <br>
+            <span id="selectWeapon">select weapon:</span><br>
+            <span id="punch">1 / touch icon - punch</span><br>
+            <span id="pistol">2 / touch icon - pistol</span><br>
+            <span id="shootgun">3 / touch icon - shootgun</span><br>
+            <span id="plasmagun">4 / touch icon - plasmagun</span><br>
+            <span id="firegun">5 / touch icon - flamethrower</span>
+            <br>
+            <br>
+            <br>
+
+                <a href="#" id="controlsBlockBack" class="animateLinks" onclick="timedClick(this),showBoardBlock(),showHideControlsBlock()" onmouseover="menuItemPlay()">&#9668; back</a>
+ 
+        </div>
+
+        <div class="blockMainMenu difficult-block">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+            <br>
+            <br>
+            <br>
+
+            <span id="selectDifficultLevel">select difficult level:</span>
+            <br>
+            <br>
+            <br>
+            <a href="room0.html" id="easy" onmouseover="menuItemPlay()" onclick="localStorage.setItem('flagSelect',1), localStorage.setItem('life', 1000), localStorage.setItem('difficult', 5), localStorage.setItem('minDifficult', 1), timedClickLink(this)">easy</a>
+            
+            <a href="room0.html" id="medium" onmouseover="menuItemPlay()" onclick="localStorage.setItem('flagSelect',1), localStorage.setItem('life', 800), localStorage.setItem('difficult', 10), localStorage.setItem('minDifficult', 2), timedClickLink(this)">medium</a>
+            
+            <a href="room0.html" id="hard" onmouseover="menuItemPlay()" onclick="localStorage.setItem('flagSelect',1), localStorage.setItem('flagPistol', 0), localStorage.setItem('life', 600), localStorage.setItem('difficult', 15), localStorage.setItem('minDifficult', 5), timedClickLink(this)">hard</a>
+           
+            <a href="room0.html" id="nightmare" onmouseover="menuItemPlay()" onclick="localStorage.setItem('flagSelect',1), localStorage.setItem('sCells', -10), localStorage.setItem('life', 300), localStorage.setItem('difficult', 30), localStorage.setItem('minDifficult', 10), timedClickLink(this)">nightmare</a>
+          
+            <a href="#" id="difficultBlockBack" class="animateLinks" onclick="timedClick(this),showHideDifficultBlock(),showBoardBlock()" onmouseover="menuItemPlay()">&#9668; back</a>
+        </div>
+
+        
+
+
+        <div class="blockMainMenu about-block">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+           
+          
+          <br>
+          
+          <br>
+          <br>
+          <span id="aboutBlockText">
+            <!-- <div class="splash"><img src="IMG/lisa-2d.png" width="300px"></div> -->
+            2D shooter with monsters, weapons, secrets and more...<br>
+            Monsters have artificial intelligence, memory and aggressiveness.<br>
+            Based only on HTML, CSS, JavaScript.<br>
+            Сreated in 2023 by <a href="https://enot-webstudio.netlify.app">ENOT web-studio</a> 
+          </span>
+          <a href="dev.html" id ="devPage" onmouseover="menuItemPlay()" onclick="timedClickLink(this)" >reset game progress and settings</a>
+          <br>
+          <br>
+          <br>
+          <a href="#" id="aboutBlockBack" class="animateLinks" onclick="timedClick(this),showHideAboutBlock(),showBoardBlock()" onmouseover="menuItemPlay()">&#9668; back</a>
+      </div>
+
+      <div class="blockMainMenu settings-block">
+            <div id="topCorner"></div>
+            <div id="bottomCorner"></div>
+           
+          
+          
+          <span id="settingsBlockText">settings</span>
+          <br>
+          <br>
+          <div id="soundIcon" class="sound-icon" onclick="timedClick(this),toggleMenuMusic()" onmouseover="menuItemPlay()">🔔</div>
+          <a href="#" id="setFlashControls" class="animateLinks" onclick="timedClick(this),setFlashlightControls(this)" onmouseover="menuItemPlay()">flashlight: buttons</a>
+          <br>
+          <a href="#" id="settingsBlockBack" class="animateLinks" onclick="timedClick(this),showHideSettingsBlock(),showBoardBlock()" onmouseover="menuItemPlay()">&#9668; back</a>
+      </div>
+    
+    
+    <script type="text/javascript" src="JS/game-loader/local-data.js"></script>
+    <script type="text/javascript" src="JS/game-loader/enot.js"></script>
+    <script type="text/javascript" src="JS/game-loader/game-loader-logik.js"></script>
+    <script type="text/javascript" src="JS/game-loader/menuclicksound.js"></script>
+    <script type="text/javascript" src="JS/game-loader/soundhovereffect.js"></script>
+    <script type="text/javascript" src="JS/game-loader/translate.js"></script>
+    <script type="text/javascript" src="JS/game-loader/settings.js"></script>
+    
+ 
+    </body>
+
+</html>

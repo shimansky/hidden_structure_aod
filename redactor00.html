@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title>hidden structure</title>
+	<link rel="stylesheet" type="text/css" href="CSS/redactorcss.css">
+    <link rel="shortcut icon" type="image/png" href="IMG/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0" xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="yellow-outline">
+            <feFlood id="outline-color" flood-color="#ffff00AA" result="base"/>
+            <feMorphology result="bigger" in="SourceGraphic" operator="dilate" radius="1"/>
+            <feComposite result="drop" in="base" in2="mask" operator="in"/>
+            <feBlend in="SourceGraphic" in2="normal" mode="normal"/>
+        </filter>
+    </defs>
+</svg>
+<span>map editor</span>
+      <div id="game">
+      
+       
+      </div>
+    
+     
+       <div id="editor">
+                  <div  class="wp wall">wall top</div>
+                  <div  class="w wall">wall</div>
+                  <div  class="lw wall">wall</div>
+                  <div  class="ww wall">wall</div>
+                  <div  class="nw wall">wall</div>
+                  <div  class="ground wall">wall</div>
+                  <div  class="as wall">wall</div>
+                  <div  class="wallwent wall">wall</div>
+                  <div  class="walllight wall">wall</div>
+                  <div  class="w021 wall">wall</div>
+                  <div  class="wandb wall">wall</div>
+                  <div  class="wandb2 wall">wall</div>
+                  <div  class="wdz wall">wall</div>
+                  <div  class="wh23 wall">wall</div>
+                  <div  class="star wall">wall</div>
+                  <div  class="stal wall">wall</div>
+                  <div  class="wallserv wall">wall</div>
+                  <div  class="wallserv-open wall">wall</div>
+                  <div  class="brickserv wall">wall</div>
+                  <div  class="brickserv-open wall">wall</div>
+                  <div  class="capsule-o wall">wall</div>
+                  <div  class="capsule-t wall">wall</div>
+                  <div  class="fserv">&nbsp;</div>
+                  <div  class="cserv">&nbsp;</div>
+                  <div  class="wserv">&nbsp;</div>                  
+                  <div  class="wc wall">wall & light</div>
+                  <div  class="ll wall">wall & light</div>
+                  <div  class="walrm wall">wall & alarm</div>
+                  <div  class="ws wall">door</div>
+                  <div  class="ud">open door</div>
+                  <div  class="we wall">empty</div>
+                  <div  class="trap1">trap</div>
+                  <div  class="fd1">&nbsp;</div>
+                  <div  class="fd2">&nbsp;</div>
+                  <div  class="fd3">&nbsp;</div>
+                  <div  class="fd4">&nbsp;</div>
+                  <div  class="fd5">&nbsp;</div>
+                  <div  class="fg">&nbsp;</div>
+                  <div  class="fwent">&nbsp;</div>
+                  <div  class="fwentbr">&nbsp;</div>
+                  <div  class="o">&nbsp;</div>
+                  <div  class="ow">&nbsp;</div>
+                  <div  class="oa">&nbsp;</div>
+                  <div  class="oash">&nbsp;</div>
+                  <div  class="op">&nbsp;</div>
+                  <div  class="vw">&nbsp;</div>
+                  <div  class="chain">&nbsp;</div>
+                  <div  class="grass">&nbsp;</div>
+                  <div  class="gr">&nbsp;</div>
+                  <div  class="vp">&nbsp;</div>
+                  <div  class="se">&nbsp;</div>
+                  <div  class="stard">&nbsp;</div>
+                  <div  class="stald">&nbsp;</div>
+                  <div  class="ash">&nbsp;</div>
+                  <div  class="asv">&nbsp;</div>
+                  <div  class="b">&nbsp;</div>
+                  <div  class="bg">&nbsp;</div>
+                  <div  class="flu">&nbsp;</div>
+                  <div  class="flf">&nbsp;</div>
+                  <div  class="dmd">&nbsp;</div>
+                  <div  class="bth">&nbsp;</div>
+                  <div  class="tol">&nbsp;</div>
+                  <div  class="snk">&nbsp;</div>
+                  <div  class="bed">&nbsp;</div>
+                  <div  class="rdo">&nbsp;</div>
+                  <div  class="wrd">&nbsp;</div>
+                  <div  class="blood-t wall">wall</div>
+                  <div  class="blood-t-m wall">wall</div>
+                  <div  class="blood-t-mh wall">wall</div>
+                  <div  class="blood-t-mm wall">wall</div>
+                  <div  class="blood-t-ms wall">wall</div>
+                  <div  class="blood-t-msh wall">wall</div>
+                  <div  class="blood-t-w wall">wall</div>
+                  <div  class="key_card_white">&nbsp;</div>
+                  <div  class="key_card_black">&nbsp;</div>
+                  <div  class="locked_door_white wall">&nbsp;</div>
+                  <div  class="locked_door_black wall">&nbsp;</div>
+                  <div  class="exit_door">&nbsp;</div>
+                  <div  class="medicKit">&nbsp;</div>
+                  <div  class="portal">&nbsp;</div>
+                  <div  class="pistol">&nbsp;</div>
+                  <div  class="pistolCells">&nbsp;</div>
+                  <div  class="shootGun">&nbsp;</div>
+                  <div  class="shootgunCells">&nbsp;</div>
+                  <div  class="plasmaGun">&nbsp;</div>
+                  <div  class="plasmagunCells">&nbsp;</div>
+                  <div  class="fireGun">&nbsp;</div>
+                  <div  class="firegunCells">&nbsp;</div>
+                  <button id="load" onclick="loadMap()">load map</button>
+                  <button id="loadDeafaultMap" onclick="loadDefaultMap()">load default map</button>
+                  <button id="clear" onclick="clearMap()">clear map</button>
+                  <button id="save" onclick="createMap()">view code</button>
+       </div>
+       <!-- <script type="text/javascript">
+           var map =[
+    ["wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp",],
+    ["wp","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","o","wp",],
+    ["wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp","wp",],
+    ["w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w","w",]
+];
+   
+
+
+       </script> -->
+       <script type="text/javascript" src="JS/utils/redactor.js"></script>
+</body>
+</html>

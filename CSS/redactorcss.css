@@ -1,0 +1,2441 @@
+
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Scope+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&display=swap');
+
+::-webkit-scrollbar { 
+    width: 0px; 
+    height: 0px; 
+   
+}
+::selection {
+   background: transparent;
+}
+
+body {cursor: url(../CURSOR/cursor.cur), auto}
+
+@keyframes blinker {
+  from { opacity:  1; }
+   50% { opacity:  0.0; }
+    to { opacity:  1; }
+}
+
+@keyframes animatedBackground {
+    0 {
+        background-position: 0 0
+    }
+    100% {
+        background-position: -200px 0px
+    }
+    }
+
+
+
+
+body, html{
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	text-align: center;
+	color: white;
+	overflow: auto; 
+/*	touch-action: none;*/
+	width: 100%;
+	height: 100%;
+	
+}
+
+#wievport{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 65%;
+	overflow: hidden;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	display: inline-block;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	touch-action: manipulation;
+    
+	
+}
+
+
+#navigator{
+    width: 40%;
+	height: 50px;
+	position: fixed;
+	left:5%;
+	top: 10px;
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	color: red;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	display:inline-flex;
+	border: 10px solid red; 
+	border-radius: 50px 50px 0  0;
+	z-index: 1000;
+	padding-left: 10px;
+	overflow: scroll;
+}
+
+
+#panel{
+	width: 40%;
+	height: 50px;
+	position: fixed;
+	right: 5%;
+	top: 10px;
+	color: red;
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	border:10px solid red;
+	border-radius: 50px 50px 0  0;
+	z-index: 1000; 
+
+}
+
+
+button{
+    width: 50px;
+	height: 50px;
+	border-top: 5px ridge red;
+	border-bottom:5px ridge red;
+	border-left:none;
+	border-right: none;
+	border-radius: 15px;
+	display: inline-block;
+	transition: all 0.5s ease; 
+	font-size: 8pt;
+	font-family: monospace;
+	color: red;
+	background-color: black;
+    
+
+}
+
+button:hover{
+	
+	color: white;
+	
+	
+	
+}
+
+h1{
+	font-family: 'Baloo 2', cursive;
+	color: red;
+	filter:drop-shadow(0px 0px 15px red);
+	font-size: 30pt;
+	z-index: 1000;
+	
+}
+
+h2 {
+	font-family: 'Scope One', serif;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+  display: block;
+}
+
+.box div {
+  display: inline-block;
+  width: 25%;
+  height: 25%;
+}
+
+
+#game{
+	width: 1500px;
+	height: 1500px;
+	margin: 0; 
+	padding: 0; 
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 225px;
+	background-image: url(../IMG/floor.jpg);
+}
+
+#player{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/player_r.png);
+	display: inline-block;
+
+	z-index: 999;
+	 	
+
+}
+
+
+
+
+#turel{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/turelactive.gif);
+	display: inline-block;
+	z-index: 999;
+}
+
+#bullet{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/bullet.png); 
+	display: inline-block;
+	z-index: 800;	
+	 
+
+}
+
+
+
+#monster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/monster_r.gif);
+    transition: all 0.2s ease; 
+    z-index: 800;
+}
+
+#monster2{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/monster_r.gif);
+    transition: all 0.2s ease; 
+    z-index: 800;
+}
+
+#bossmonster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/bossMonster.gif);
+	background-size: 100%;
+    transition: all 0.2s ease; 
+    z-index: 800;
+}
+
+.scientist{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/doc.png); 
+    z-index: 800;
+}
+
+#doc{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/pic.gif);   
+    z-index: 800;
+}
+
+#doc:hover{
+	background-image: url(../IMG/pichover.png);
+}
+
+.scientist:hover{
+	background-image: url(../IMG/doc_green.png);
+}
+
+
+
+
+#controlPanel{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/controlpanelon.jpg);
+	display: inline-block;
+    z-index: 900;
+    color: yellow;
+}
+
+#controlPanel:hover{
+	filter: url(#yellow-outline);
+
+}
+
+
+.portal{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/portal.gif);
+	display: inline-block;
+    z-index: 900;
+}
+
+.modul{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/modul.png);
+	display: inline-block;
+    z-index: 900;
+    font-size: 0.6em;
+    text-align: center;
+    color: yellow;
+    animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+
+
+
+.labClone{
+	width: 50px;
+	height: 100px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	background-image: url(../IMG/labclone.png);
+	display: inline-block;
+    z-index: 600;
+}
+
+
+
+#editor{
+	width: 200px;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	padding: 0;
+	margin: 0;
+	border: solid 5px red;
+	background-color: black;
+	z-index: 9999;
+	color: red;
+	font-size: 8pt;
+	font-family: monospace;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-x: scroll;
+}
+
+#editor>*:hover{
+	filter: url(#yellow-outline);
+}
+
+#editor>div{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+}
+
+#game>*:hover{
+	filter: url(#yellow-outline);
+}
+
+.fd1{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage1.jpg);
+    z-index: 1;
+}
+
+.fd2{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage2.jpg);
+    z-index: 1;
+}
+.fd3{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage3.jpg);
+    z-index: 1;
+}
+.fd4{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage4.jpg);
+    z-index: 1;
+}
+.fd5{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-damage5.jpg);
+    z-index: 1;
+}
+
+.w{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/redwall.jpg);
+	z-index: 750;
+	position: relative;
+}
+
+.walrm{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wall-alarm.gif);
+	z-index: 750;
+	position: relative;
+}
+
+.lw{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/linewall.jpg);
+	z-index: 750;
+	position: relative;
+}
+
+
+.as{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfalt.png);
+	z-index: 1;
+}
+
+
+.ash{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfalthorizontalline.png);
+	z-index: 1;
+}
+
+.asv{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfaltverticalline.png);
+	z-index: 1;
+}
+
+
+.o{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcefloor.jpg);
+}
+
+.black{
+	width: 50px;
+	height: 50px;
+	background-image: url(../IMG/oficcefloor.jpg);
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	z-index: 10;
+}
+
+.wc{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcewallcooler.jpg);
+	z-index: 1;
+}
+
+.ll{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/lightwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.ww{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/wentwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.nw{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/numbwall.jpg);
+	position: relative;
+	z-index: 701;
+}
+
+.wp{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcewallplant.png);
+	z-index: 1;
+}
+
+.wp:hover{
+	filter: url(#yellow-outline);
+
+}
+
+.ws{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/oficcedoorclosed.jpg);
+	z-index: 1;
+}
+
+.ws:hover{
+	filter: url(#yellow-outline);
+
+}
+
+.locked_door_white{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedoorclosedwhite.jpg);
+	z-index: 700;
+}
+
+#locked_door_white:hover{
+	filter: url(#yellow-outline);
+}
+
+.locked_door_black{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedoorclosedblack.jpg);	
+	z-index: 700;
+}
+
+#locked_door_black:hover{
+	filter: url(#yellow-outline);
+}
+
+.exit_door{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/exitdoor.jpg);
+	z-index: 700;
+}
+
+#exit_door:hover{
+	filter: url(#yellow-outline);
+}
+
+.ud{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcedooropen.png);
+	z-index: 1;
+	color: red;
+}
+
+.ud_rd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/oficcedooropen.jpg);
+	z-index: 1;
+}
+
+.key_card_white{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/key_card_1.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    filter:drop-shadow(0px 0px 5px blue);
+    text-align: center;
+    color: yellow;
+    z-index: 700;
+}
+
+
+
+.key_card_black{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	animation-name: blinker;
+	animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	background-image: url(../IMG/key_card_2.png);
+	filter:drop-shadow(0px 0px 15px blue);
+    text-align: center;
+    color: yellow;
+	display: inline-block;
+	z-index: 700;
+}
+
+.medicKit{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/medic_kit.png);
+	filter:drop-shadow(0px 0px 15px red);
+	z-index: 700;
+}
+
+#megaMedicKit{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/mega_medic_kit.png);
+	filter:drop-shadow(0px 0px 15px red);
+	z-index: 700;
+}
+
+.pistol{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/pistol.png);
+	 animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+}
+
+.shootGun{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/shootgun.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+}
+
+
+.pistolCells{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/cells.png);
+	z-index: 700;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+.shootgunCells{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/scells.png);
+	z-index: 700;
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+}
+
+.fg{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-green.png);
+    z-index: 1;
+}
+
+.fserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-server.jpg);
+    z-index: 1;
+}
+
+.cserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete-penal.png);
+    z-index: 1;
+}
+
+.wserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went-penal.jpg);
+    z-index: 1;
+}
+
+.fwent{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went.jpg);
+    z-index: 1;
+}
+
+.fwentbr{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/floor-went-broken.jpg);
+    z-index: 1;
+}
+
+.wallserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall-server.jpg);
+    z-index: 1;
+}
+
+.wallserv-open{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall-server-open-doors.png);
+    z-index: 1;
+}
+
+.brickserv{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/brick-penal.png);
+    z-index: 1;
+}
+
+.brickserv-open{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/brick-penal-open-doors.png);
+    z-index: 1;
+}
+
+.ow{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/flor_wood.jpg);
+    z-index: 1;
+}
+
+.oa{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete.png);
+    z-index: 1;
+}
+
+.oash{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/concreete-shadow.png);
+    z-index: 1;
+}
+
+.w021{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wall021.jpg);
+    z-index: 1;
+}
+
+.wandb{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallAndBox.jpg);
+    z-index: 1;
+}
+
+.wandb2{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallAndBox2.jpg);
+    z-index: 1;
+}
+
+.wdz{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallDangerZone.jpg);
+    z-index: 1;
+}
+
+.wh23{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/wallHarp23.jpg);
+    z-index: 1;
+}
+
+.op{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+	padding: 0;
+	margin: 0;
+    background-image: url(../IMG/oficcefloortable.jpg);
+    z-index: 1;
+}
+
+.we{
+	width: 50px;
+	height: 50px;
+    display: inline-block;
+    background-color: black;
+	padding: 0;
+	margin: 0;
+	z-index: 1;
+}
+
+
+#message{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left:0px;
+	top: 0px;
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	text-align: center;
+	font-family: 'Baloo 2', cursive;
+	color: red;
+	font-size: 20pt;
+	z-index: 1000;
+	overflow: scroll;
+}
+
+
+
+#menuArea{
+	min-width: 500px;
+	margin-top: 10px;	
+}
+
+ 
+
+
+span{
+font-family: 'Scope One', serif; 
+font-size: 5pt;
+display: none;
+}
+
+
+
+a{
+	color: red;
+	/*margin: 25px; */
+	text-decoration: none;
+	font-family: 'Baloo 2', cursive;
+	font-size: 1.2em;
+
+
+}
+
+#splash{
+	display: inline-block;
+	margin-top: 10%;
+	
+
+}
+
+.elevatorButton{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: red;
+	display: inline-block;
+	border: 2px solid white; 
+    text-align: center;
+    background-image: url(../IMG/metallbutton.png);
+    background-color: black;
+    margin-top: 10px;
+}
+
+.elevatorButton:hover{
+   
+    background-image:none;
+    
+}
+
+#enterToLaboratory{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1000px;
+	height: 100%;
+	display: inline-block;
+	background-color: black;
+	
+
+}
+
+.ground{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/ground.jpg);
+	z-index: 1;
+	color: red;
+}
+
+.groundLong{
+	width: 1500px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/ground.jpg);
+	z-index: 900;
+	color: red;
+}
+
+.grass{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.png);
+	z-index: 1;
+	color: red;
+}
+
+.gr{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.jpg);
+	z-index: 1;
+	color: red;
+}
+
+.grassLong{
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/grass.png);
+	z-index: 0;
+	color: red;
+}
+
+
+
+.tree{
+	width: 200px;
+	height: 200px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/tree.png);
+	z-index: 1;
+	color: red;
+}
+
+.stop{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stop.png);
+	z-index: 1;
+	color: red;
+}
+
+#car{
+	width: 100px;
+	height: 150px;
+	transform: rotate(-90deg);
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/chevrolet.png);
+	z-index: 900;
+	color: red;
+}
+
+#whiteCar{
+	width: 150px;
+	height: 100px;
+	/*transform: rotate(-90deg);*/
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/whitecar.png);
+	z-index: 900;
+	color: red;
+}
+
+.sofa{
+	width: 100px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/sofa.png);
+	z-index: 800;
+	color: red;
+}
+
+.armchair{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/armchair.png);
+	z-index: 800;
+	color: red;
+}
+
+.pizza{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/pizza.gif);
+	z-index: 1;
+	color: red;
+}
+
+
+.table{
+    width: 100px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/table.png);
+	z-index: 850;
+	color: red;
+}
+
+
+.building{
+	width: 100%;
+	height: 500px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/oficcewall.jpg);
+	z-index: 0;
+	color: red;
+}
+
+#chain{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/chain.png);
+	z-index: 1;
+	color: red;
+}
+
+.chain{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/chain.png);
+	z-index: 1;
+	color: red;
+}
+
+.chainLong{
+	width: 100%;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/chain.png);
+	z-index: 1;
+	color: red;
+}
+
+.orbita{
+	width: 300px;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/orbita.png);
+	z-index: 1;
+	color: red;
+}
+
+
+#groundLongCover{
+    width: 100%;
+	height: 300px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/ground.jpg);
+	z-index: 901;
+	color: red;
+}
+
+.liftButtons{
+	display: inline-block;
+	text-align: center;
+	border-radius: 5px;
+	border: 10px solid red;
+	padding: 20px;
+	font-family: 'Baloo 2', cursive;
+	background-color: #212121;
+}
+
+.vw{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/water.gif);
+	z-index: 1;
+}
+
+.vp{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/whitepaint.gif);
+	z-index: 1;
+}
+
+.se{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/se.png);
+	z-index: 1;
+
+}
+
+#mainServer{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/mainserver.gif);
+	z-index: 1;
+}
+
+#lisa{
+    width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/greenwoman.png);
+	z-index: 1;
+}
+
+#caty{
+    width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/woman2.gif);
+	z-index: 1;
+}
+
+
+#drone{
+    width: 518px;
+	height: 214px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/mv2Stay.png);
+	background-size: contain;
+	filter:drop-shadow(10px 10px 15px black);
+	z-index: 1000;
+}
+
+.deck{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/deckchair.png);
+	z-index: 1;
+}
+
+#monsterPortal{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/monsterportal.gif);
+	z-index: 1;
+}
+
+.b{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bush.png);
+	z-index: 1;
+}
+
+.bg{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bushgrass.png);
+	z-index: 1;
+}
+
+#megan{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/redWoman.gif);
+	z-index: 1;
+}
+
+#lola{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/greenwoman.gif);
+	z-index: 1;
+}
+
+#yen{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/Yen.png);
+	transition: all 0.2s;
+	z-index: 900;
+}
+
+#yen:hover{
+    filter: url(#yellow-outline);
+}
+
+#boss{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/boss.png);
+	z-index: 1;
+}
+
+#boss:hover{
+    filter: url(#yellow-outline);
+}
+
+#droneButton{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/dronedriver.png);
+	z-index: 1;
+}
+
+#droneButton:hover{
+    filter: url(#yellow-outline);
+}
+
+
+#coverPlate{
+	width: 300px;
+	height: 300px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	font-size: 0.6em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/oficcewall.jpg);
+	z-index: 1000;
+}
+
+
+#phoneBackground{
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	position: absolute;
+	z-index: 1000;
+	left: 0;
+	top:0;
+}
+
+#prehistory{
+	display: inline-block;
+	width: 300px;
+	/*height: 600px;*/
+	font-family: 'Scope One', serif;
+	color: white;
+	text-align: center;
+	font-size: 12pt;
+	z-index: 1000;
+	
+}
+
+.preprehistoryText{
+	display: inline-block;
+	
+}
+
+#phone{
+	display: inline-block;
+	width: 300px;
+	height: 600px;
+	margin: 10px;
+	background-color: white;
+	border-radius: 10px;
+	text-align: center;
+	color: red;
+	font-size: 15pt;
+	z-index: 1000;
+	
+
+}
+
+#display{
+	display: inline-block;
+	width: 290px;
+	height: 500px;
+	color: white;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	background-color: #0c2430;
+	margin-top: 30px;
+	padding: 0;
+	overflow: auto;
+
+}
+
+.yenSMS{
+	display: inline-block;
+	width: 200px;
+	color: white;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	background-color: #408526;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 5px;
+    float: left;
+	left:30%;
+	
+
+}
+
+.mySMS{
+    display: inline-block;
+	width: 200px;
+	color: white;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	background-color: #005c91;
+	margin: 5px;
+	padding: 0;
+	border-radius: 5px;
+    float: right;
+	left:5%;
+}
+
+.dateTimeSMS{
+	 display: inline-block;
+	 color: black;
+}
+
+#go{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+	border:1px solid grey;
+	color: black;
+	font-family: 'Baloo 2', cursive;
+	font-size: 15pt;
+}
+
+#go:hover{
+	background-color: red;
+
+}
+
+#iconPistol{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/pistol.png);
+	display: none;
+	z-index: 999;
+}
+
+#iconShootgun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/shootgun.png);
+	display: none;
+	z-index: 999;
+}
+
+#iconPlasmagun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/plasmagun.png);
+	display: none;
+	z-index: 999;
+}
+
+#iconFiregun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/firegun.png);
+	display: none;
+	z-index: 999;
+}
+
+#iconWhiteCard{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/key_card_1.png);
+	display: none;
+	z-index: 999;
+}
+
+#iconBlackCard{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/key_card_2.png);
+	display: none;
+	z-index: 999;
+}
+#iconPhone{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	background-image: url(../IMG/phone.png);
+	display: inline-block;
+	z-index: 999;
+}
+
+#iconPhone:hover{
+	filter: url(#yellow-outline);
+}
+
+#animExitLift{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	background-image: url(../IMG/liftanimation.gif);
+	display: inline-block;
+	z-index: 900;
+}
+
+#currentFloorPanel{
+	width: 200px;
+	height: 25px;
+	padding: 0px;
+	margin: 0;
+	display: inline-block;
+	background-color: black;
+	border: 3px solid red;
+	color: black;
+	font-size: 13pt;
+	
+}
+
+#enterAccessCodePanel{
+	width: 200px;
+	height: 25px;
+	padding-top: 5px;
+	margin: 0;
+	display: inline-block;
+	background-color: black;
+	border: 3px solid red;
+	color: black;
+	font-size: 13pt;
+	
+}
+
+
+#sensorAttack{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 50%;
+	top: 90%;
+	color: red;
+	background-color: black;
+	padding: 0;
+	margin: 0;
+	font-size: 15pt;
+	font-family: impact;
+	border:10px solid red;
+	border-radius: 50px;
+	z-index: 1000; 
+
+
+}
+
+#indexMenu{
+	display: block;
+	/*width: 95%;*/
+	color: white;
+	font-size: 15pt;
+	font-family: 'Baloo 2', cursive;
+	padding: 50px;
+	margin: 10px;
+	background-color: black;
+	border:10px solid red;
+	border-radius: 50px;
+	overflow: auto;
+	
+
+}
+
+.downArrow{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/downarrow.gif);
+	z-index: 1;
+	color: red;
+}
+
+#board{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	/*background-image: url(../IMG/logoCover.gif);
+	background-size: cover;*/
+}
+
+.deadMonster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/deadmonster.png);
+    transition: all 0.2s ease; 
+    z-index: 700;
+}
+
+.bossDeadMonster{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/bossdeadmonster.png);
+	background-size: 100%;
+	background-size: cover;
+    transition: all 0.2s ease; 
+    z-index: 700;
+}
+
+.pistolBullet{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/bullet.png);
+    transition: all 0.2s ease; 
+    z-index: 700;
+}
+
+.tab{
+	width: 150px;
+	max-height: 200px;
+	position: fixed;
+	padding: 10px;
+	margin: 0;
+	font-size: 0.9em;
+	color: red;
+	text-align: center;
+    transition: all 0.5s ease; 
+    background-color: black;
+    border: 5px solid red;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,1);
+    z-index: 1100;
+    overflow: scroll;
+
+}
+
+
+
+
+
+#secretLift{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	background-image: url(../IMG/liftanimation.gif);
+	display: inline-block;
+	z-index: 0;
+}
+
+#artefact{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.6em;
+	color: red;
+	text-align: left;
+	background-image: url(../IMG/artefact.png);
+    transition: all 0.2s ease; 
+    z-index: 700;
+}
+
+.roadLong{
+	width: 100%;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/asfalthorizontalline.png);
+	background-size: contain;
+	z-index: 1;
+	/*animation: animatedBackground 1s linear infinite;*/
+}
+
+.trailerStory{
+	width: 70%;
+	min-height: 100px;
+	margin-top: 10px;
+	padding:20px;
+	display: inline-block;
+	font-family: 'Baloo 2', cursive;
+	color: red;
+	font-size: 15pt;
+	position: relative;
+	/*left: 10px;*/
+	z-index: 2000;
+	background-color: black;
+	border-top: 10px ridge red;
+	border-bottom:10px ridge red;
+	border-radius: 50px;
+	
+}
+
+skipStory{
+	display: inline-block;
+}
+
+#hint{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	font-size: 0.8em;
+	color: yellow;
+	text-align: left;
+	background-image: url(../IMG/pic.gif);   
+    z-index: 800;
+}
+
+.plasmaGun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/plasmagun.png);
+	z-index: 700;
+}
+
+.plasmagunCells{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/plasmaguncells.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+}
+
+.fireGun{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/firegun.png);
+	z-index: 700;
+}
+
+.firegunCells{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/fireguncells.png);
+	animation-name: blinker;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+	z-index: 700;
+}
+
+#phoneSmall{
+    width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	display: inline-block;
+	background-image: url(../IMG/phonesmall.png);
+	z-index: 700;
+}
+
+#phoneSmall:hover{
+	filter: url(#yellow-outline);
+}
+
+
+#flatBlackPlane{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+	background-color: black;
+	text-align: center;
+	display: inline-block;
+	
+}
+
+#enot{
+	width: 50%;
+	margin-top: 20%;
+	opacity: 100%;
+	transition: all 3s;
+	
+
+}
+
+
+.toilet{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/toilet.png);
+	z-index: 800;
+	position: absolute;
+	color: red;
+}
+
+.sink{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/sink.png);
+	z-index: 800;
+	position: absolute;
+	color: red;
+}
+
+#joystik{
+	width:150px;
+	height: 150px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	z-index: 10000;
+	position: absolute;
+	bottom: 10px;
+	color: red;
+}
+
+#robertIMG{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	background-image: url(../IMG/robert.png);
+	margin-bottom: 10px;
+
+}
+
+#lisaIMG{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	background-image: url(../IMG/lisa.png);
+	margin-bottom: 10px;
+    
+}
+
+#frankIMG{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	background-image: url(../IMG/frank.png);
+	margin-bottom: 10px;
+
+}
+
+#copIMG{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	background-image: url(../IMG/copface.png);
+	margin-bottom: 10px;
+
+}
+
+#cop2IMG{
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	border-top: 10px solid red;
+	border-bottom:10px solid red;
+	border-radius: 50px;
+	background-image: url(../IMG/cop2face.png);
+	margin-bottom: 10px;
+
+}
+
+#cop{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/cop.png);
+	z-index: 1;
+	color: red;
+}
+
+#cop:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#cop2{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/cop2.png);
+	z-index: 2;
+	color: red;
+}
+
+#cop2:hover{
+	filter: url(#yellow-outline);
+
+}
+
+#police{
+	width: 150px;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/police.gif);
+	z-index: 1;
+	color: red;
+}
+
+#police2{
+	width: 150px;
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/police2.gif);
+	z-index: 1;
+	color: red;
+}
+
+#policeLine{
+	width: 50px;
+	height: 600px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/policeline.png);
+	z-index: 1;
+	color: red;
+}
+
+.wallwent{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wallwent.jpg);
+	z-index: 1;
+}
+
+.walllight{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/walllight.jpg);
+	z-index: 1;
+}
+
+.star{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsr.jpg);
+	z-index: 1;
+}
+
+.stal{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsl.jpg);
+	z-index: 1;
+}
+
+.stard{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsr-down.jpg);
+	z-index: 1;
+}
+
+.stald{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/stairsl-down.jpg);
+	z-index: 1;
+}
+
+.flu{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/floorinsulatorrooms.jpg);
+	z-index: 1;
+}
+
+.flf{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/floor.jpg);
+	z-index: 1;
+}
+
+.dmd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/deadmonster.png);
+	z-index: 1;
+}
+
+.bth{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/batchu.png);
+	z-index: 1;
+}
+
+.tol{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/toilet.png);
+	z-index: 1;
+}
+
+.snk{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/sink.png);
+	z-index: 1;
+}
+
+.bed{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/bed.png);
+	z-index: 1;
+}
+
+.rdo{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/rdo.gif);
+	z-index: 1;
+}
+
+.rdc{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/rdc.png);
+	z-index: 1;
+}
+
+.wrd{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/wrd.png);
+	z-index: 1;
+}
+
+.trap1 {
+ 	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	z-index: 1;
+  	background-image: url(../IMG/trap1.gif);
+    cursor: url(../CURSOR/hand.cur), auto;
+}
+
+.blood-t{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table.png);
+	z-index: 1;
+}
+
+.blood-t-m{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man.png);
+	z-index: 1;
+}
+
+.blood-t-mh{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-half.png);
+	z-index: 1;
+}
+
+.blood-t-mm{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-monster.png);
+	z-index: 1;
+}
+
+.blood-t-ms{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-man-skillet.png);
+	z-index: 1;
+}
+
+.blood-t-msh{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-monster-head.png);
+	z-index: 1;
+}
+
+.blood-t-w{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/blood-table-woman.png);
+	z-index: 1;
+}
+
+.capsule-o{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/capsule-wall.gif);
+	z-index: 1;
+}
+
+.capsule-t{
+	width: 50px;
+	height: 50px;
+	padding: 0;
+	margin: 0;
+	display: inline-block;
+	background-image: url(../IMG/capsule2-wall.gif);
+	z-index: 1;
+}
